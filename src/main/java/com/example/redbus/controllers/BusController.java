@@ -57,4 +57,15 @@ public class BusController {
         }
         return "Bus not found!";
     }
+
+    @GetMapping("/{busId}/seats/available")
+    public List<Seat> getAvailableSeats(@PathVariable Long busId) {
+        return seatRepo.findByBusIdAndBookedFalse(busId);
+    }
+
+    @GetMapping("/{busId}/seats/booked")
+    public List<Seat> getBookedSeats(@PathVariable Long busId) {
+        return seatRepo.findByBusIdAndBookedTrue(busId);
+    }
+
 }

@@ -11,7 +11,7 @@ public class Bus {
     private Long id;
 
     private String busNumber;
-    private String type; // Sleeper, Seater, Semi-Sleeper
+    private String type; 
     private String source;
     private String destination;
 
